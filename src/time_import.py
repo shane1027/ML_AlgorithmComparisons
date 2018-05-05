@@ -22,6 +22,7 @@ times = list()
 names = ["Numpy int", "Numpy mixed",
         "Pandas int", "Pandas mixed"]
 
+# characterize small datasets
 times.append(timeit.timeit("import_int_data(\"" + SMALL_INT_FILE + "\")",
     number=LOOP, setup="from data_utils import import_int_data"))
 times.append(timeit.timeit("import_mixed_data(\"" + SMALL_MIXED_FILE + "\")",
@@ -30,6 +31,8 @@ times.append(timeit.timeit("import_pandas_data(\"" + SMALL_INT_FILE + "\")",
     number=LOOP, setup="from data_utils import import_pandas_data"))
 times.append(timeit.timeit("import_pandas_data(\"" + SMALL_MIXED_FILE + "\")",
     number=LOOP, setup="from data_utils import import_pandas_data"))
+
+print("Small Dataset Results:\n")
 
 for n,time in enumerate(times):
     print("{}:\t\t{}".format(names[n], time))
