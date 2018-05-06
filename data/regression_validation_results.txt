@@ -1,0 +1,80 @@
+Fold 1:
+Multi-Layer Perceptron has an R2 score of -922.734157
+Decision Tree Regressor has an R2 score of 0.969179
+Linear Regressor has an R2 score of 0.774263
+Ridge w/ cross-val has an R2 score of 0.771188
+Lasso w/ cross-val has an R2 score of 0.503645
+ElasticNet w/ cross-val has an R2 score of 0.503642
+Logistic Regression has an R2 score of 0.939757
+Fold 2:
+Multi-Layer Perceptron has an R2 score of -1610.669181
+Decision Tree Regressor has an R2 score of 0.967947
+Linear Regressor has an R2 score of 0.751041
+Ridge w/ cross-val has an R2 score of 0.742622
+Lasso w/ cross-val has an R2 score of 0.489616
+ElasticNet w/ cross-val has an R2 score of 0.489613
+Logistic Regression has an R2 score of 0.914306
+Fold 3:
+Multi-Layer Perceptron has an R2 score of -581.895796
+Decision Tree Regressor has an R2 score of 0.957694
+Linear Regressor has an R2 score of 0.706093
+Ridge w/ cross-val has an R2 score of 0.706197
+Lasso w/ cross-val has an R2 score of 0.416184
+ElasticNet w/ cross-val has an R2 score of 0.416181
+Logistic Regression has an R2 score of 0.904928
+Fold 4:
+Multi-Layer Perceptron has an R2 score of -512.195964
+Decision Tree Regressor has an R2 score of 0.955572
+Linear Regressor has an R2 score of 0.714362
+Ridge w/ cross-val has an R2 score of 0.170822
+Lasso w/ cross-val has an R2 score of 0.477031
+ElasticNet w/ cross-val has an R2 score of 0.477028
+Logistic Regression has an R2 score of 0.909141
+Fold 5:
+Multi-Layer Perceptron has an R2 score of -598.550607
+Decision Tree Regressor has an R2 score of 0.953545
+Linear Regressor has an R2 score of 0.662374
+Ridge w/ cross-val has an R2 score of 0.624859
+Lasso w/ cross-val has an R2 score of 0.423482
+ElasticNet w/ cross-val has an R2 score of 0.423479
+Logistic Regression has an R2 score of 0.895629
+Fold 6:
+Multi-Layer Perceptron has an R2 score of -697.650014
+Decision Tree Regressor has an R2 score of 0.914778
+Linear Regressor has an R2 score of 0.663121
+Ridge w/ cross-val has an R2 score of 0.664521
+Lasso w/ cross-val has an R2 score of 0.444715
+ElasticNet w/ cross-val has an R2 score of 0.444713
+Logistic Regression has an R2 score of 0.915092
+Fold 7:
+Multi-Layer Perceptron has an R2 score of -5531.779687
+Decision Tree Regressor has an R2 score of 0.966703
+Linear Regressor has an R2 score of 0.803054
+Ridge w/ cross-val has an R2 score of 0.801357
+Lasso w/ cross-val has an R2 score of 0.516867
+ElasticNet w/ cross-val has an R2 score of 0.516864
+Logistic Regression has an R2 score of 0.917178
+Fold 8:
+Multi-Layer Perceptron has an R2 score of -652.382142
+Decision Tree Regressor has an R2 score of 0.973113
+Linear Regressor has an R2 score of 0.602898
+Ridge w/ cross-val has an R2 score of 0.582136
+Lasso w/ cross-val has an R2 score of 0.564066
+ElasticNet w/ cross-val has an R2 score of 0.564063
+Logistic Regression has an R2 score of 0.939875
+Fold 9:
+Multi-Layer Perceptron has an R2 score of -133.418391
+Decision Tree Regressor has an R2 score of 0.964982
+Linear Regressor has an R2 score of 0.738185
+Ridge w/ cross-val has an R2 score of 0.427550
+Lasso w/ cross-val has an R2 score of 0.497209
+ElasticNet w/ cross-val has an R2 score of 0.497207
+Logistic Regression has an R2 score of 0.917840
+Fold 10:
+Multi-Layer Perceptron has an R2 score of -916.783650
+Decision Tree Regressor has an R2 score of 0.954794
+Linear Regressor has an R2 score of 0.761516
+Ridge w/ cross-val has an R2 score of 0.754370
+Lasso w/ cross-val has an R2 score of 0.487630
+ElasticNet w/ cross-val has an R2 score of 0.487627
+Logistic Regression has an R2 score of 0.907080

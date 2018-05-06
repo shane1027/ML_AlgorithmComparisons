@@ -1,0 +1,6 @@
+Small Dataset Results:
+
+Numpy int:		2.3124181340026553
+Numpy mixed:		2.1670437790016877
+Pandas int:		0.15612669799884316
+Pandas mixed:		0.13003342800220707
