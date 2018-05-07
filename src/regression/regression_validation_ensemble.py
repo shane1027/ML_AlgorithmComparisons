@@ -8,31 +8,32 @@
 ################################################################################
 
 from sklearn.model_selection import KFold
-from sklearn.linear_model import ( RidgeCV, LinearRegression, LassoCV,
-        ElasticNetCV, LogisticRegression )
-from sklearn.neural_network import MLPRegressor
-from sklearn.ensemble import AdaBoostRegressor, RandomForestRegressor
+from sklearn.ensemble import (AdaBoostRegressor, RandomForestRegressor,
+        BaggingRegressor, ExtraTreesRegressor, GradientBoostingRegressor)
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.preprocessing import StandardScaler, RobustScaler
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, explained_variance_score
 import matplotlib.pyplot as plt
 from data_utils import *
+from sklearn.preprocessing import (
+        StandardScaler,
+        RobustScaler,
+        QuantileTransformer
+        )
+
 
 # location of training data
-REG_TRAIN_DATA='../data/regression_train.data'
-REG_TEST_DATA='../data/regression_test.test'
+REG_TRAIN_DATA='../../data/regression_train.data'
+REG_TEST_DATA='../../data/regression_test.test'
 
 # algorithms to be tested
 regessors = [DecisionTreeRegressor(),
-        LinearRegression(), RidgeCV(alphas=[0.5, 5.0, 10], fit_intercept=True),
-        LassoCV(fit_intercept=True),
-        ElasticNetCV(fit_intercept=True, precompute='auto'),
-        LogisticRegression(),
-        AdaBoostRegressor(RandomForestRegressor(n_jobs=-1))]
-reg_name = ["Decision Tree Regressor",
-        "Linear Regressor", "Ridge w/ cross-val", "Lasso w/ cross-val",
-        "ElasticNet w/ cross-val", "Logistic Regression",
-        "AdaBoost Random Forest"]
+        AdaBoostRegressor(RandomForestRegressor(n_jobs=-1)),
+        BaggingRegressor(RandomForestRegressor(n_jobs=-1), n_estimators=100),
+        ExtraTreesRegressor(),
+        GradientBoostingRegressor()]
+reg_name = ["Decision Tree", "AdaBoost Random Forest",
+            "Bagging", "Extra Trees",
+            "Gradient Boosting"]
 
 # build data frame of feature vals and target vals
 model_data = import_pandas_data(REG_TRAIN_DATA)
@@ -43,7 +44,7 @@ validation_data = import_pandas_data(REG_TEST_DATA)
 # than a newly formatted pandas dataframe... and len(data.columns) gives
 # num_columns
 
-# split dataset into testing / training for k-folds validation
+# scale and split dataset into testing / training for k-folds validation
 num_features = len(model_data.columns) - 1
 feature_data = model_data.loc[:, 0:num_features-1].values
 class_data = model_data.loc[:, num_features].values
@@ -52,9 +53,9 @@ validation_feature_data = validation_data.loc[:, 0:num_features-1].values
 validation_class_data = validation_data.loc[:, num_features].values
 
 # apply outlier filtering to feature values
-feature_data, class_data = filter_outliers(feature_data, class_data)
+feature_data, class_data = filter_outliers(feature_data, class_data, 0.1)
 
-# scale feature data
+# I found RobustScaler() to work best with this dataset
 scaler = StandardScaler().fit(feature_data)
 feature_data = scaler.transform(feature_data)
 validation_feature_data = scaler.transform(validation_feature_data)
@@ -90,29 +91,32 @@ for train_indices, test_indices in kf.split(feature_data, class_data):
         feature_test.append(feature_data[index])
         class_test.append(class_data[index])
 
-    # for each algorithm, test the dataset / fold
+    # for each algorithm, test th40dataset / fold
     for n, algo in enumerate(regessors):
         algo.fit(feature_train, class_train)
         predicted = algo.predict(feature_test)
         r2_val = r2_score(class_test, predicted)
+        var_val = explained_variance_score(class_test, predicted)
         # for the logistic regression, score() results in the accuracy
         results = algo.score(feature_test, class_test)
         if results >= 0:
             trial_results[i-1].append(r2_val)
         else:
             trial_results[i-1].append(0)
-        print("%s has an R2 score of %f" % (reg_name[n], r2_val))
+        print("%s has an R2 score of %f and variance score of %f" %
+                (reg_name[n], r2_val, var_val))
 
         # plot the results
-        plt.subplot(2,4,n+1)
+        plt.subplot(2,3,n+1)
         plt.scatter(range(len(predicted)), predicted, color='black')
         plt.scatter(range(len(predicted)), class_test, color='blue')
         plt.title(reg_name[n])
-        plt.xlabel("R2 Score: %1.03f" % r2_val)
+        plt.xlabel("R2 Score: %1.03f\nVariance Score: %1.03f" %
+                (r2_val, var_val))
     i += 1
     title = plt.suptitle('Algorithm Comparison', fontsize="x-large")
     title.set_y(0.95)
-    plt.subplots_adjust(hspace=0.35)
+    plt.subplots_adjust(hspace=0.40)
     # uncomment the following line to see a scatter plot of each regression
     # plt.show()
 

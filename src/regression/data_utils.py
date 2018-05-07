@@ -30,9 +30,10 @@ def import_pandas_data(file):
     return df
 
 # filter outliers out of data using isolated forest technique
-def filter_outliers(x_input, y_input):
+def filter_outliers(x_input, y_input, contamination_val):
     rng = np.random.RandomState(42)
-    outlier_filter = IsolationForest(random_state=rng)
+    outlier_filter = IsolationForest(contamination=contamination_val,
+            random_state=rng, n_jobs=-1)
     outlier_filter.fit(x_input)
 
     outlier_prediction = outlier_filter.predict(x_input)

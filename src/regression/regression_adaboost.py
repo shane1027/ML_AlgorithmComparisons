@@ -19,11 +19,11 @@ import numpy as np
 from data_utils import *
 
 # location of training data
-REG_TRAIN_DATA='../data/regression_train.data'
-REG_TEST_DATA='../data/regression_test.test'
+REG_TRAIN_DATA='../../data/regression_train.data'
+REG_TEST_DATA='../../data/regression_test.test'
 
 # location to save prediction output
-PRED_OUT='../data/adaboost_standard_filtered_prediction.txt'
+PRED_OUT='../../data/adaboost_standard_filtered_prediction.txt'
 
 # regression algorithm
 regressor = AdaBoostRegressor(RandomForestRegressor(n_jobs=-1))
@@ -35,6 +35,7 @@ validation_data = import_pandas_data(REG_TEST_DATA)
 
 # split dataset into testing / training for k-folds validation
 num_features = len(model_data.columns) - 1
+contam = 0.01
 feature_data = model_data.loc[:, 0:num_features-1].values
 class_data = model_data.loc[:, num_features].values
 
@@ -42,7 +43,7 @@ validation_feature_data = validation_data.loc[:, 0:num_features-1].values
 validation_class_data = validation_data.loc[:, num_features].values
 
 # apply outlier filtering to feature values
-feature_data, class_data = filter_outliers(feature_data, class_data)
+feature_data, class_data = filter_outliers(feature_data, class_data, contam)
 
 # scale feature data
 scaler = StandardScaler().fit(feature_data)
