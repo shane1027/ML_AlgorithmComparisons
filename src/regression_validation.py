@@ -13,6 +13,7 @@ from sklearn.linear_model import ( RidgeCV, LinearRegression, LassoCV,
 from sklearn.neural_network import MLPRegressor
 from sklearn.ensemble import AdaBoostRegressor, RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
+from sklearn.preprocessing import StandardScaler, RobustScaler
 from sklearn.metrics import r2_score
 import matplotlib.pyplot as plt
 from data_utils import *
@@ -22,13 +23,13 @@ REG_TRAIN_DATA='../data/regression_train.data'
 REG_TEST_DATA='../data/regression_test.test'
 
 # algorithms to be tested
-regessors = [MLPRegressor(alpha=.0001), DecisionTreeRegressor(),
+regessors = [DecisionTreeRegressor(),
         LinearRegression(), RidgeCV(alphas=[0.5, 5.0, 10], fit_intercept=True),
         LassoCV(fit_intercept=True),
         ElasticNetCV(fit_intercept=True, precompute='auto'),
         LogisticRegression(),
         AdaBoostRegressor(RandomForestRegressor(n_jobs=-1))]
-reg_name = ["Multi-Layer Perceptron", "Decision Tree Regressor",
+reg_name = ["Decision Tree Regressor",
         "Linear Regressor", "Ridge w/ cross-val", "Lasso w/ cross-val",
         "ElasticNet w/ cross-val", "Logistic Regression",
         "AdaBoost Random Forest"]
@@ -49,6 +50,14 @@ class_data = model_data.loc[:, num_features].values
 
 validation_feature_data = validation_data.loc[:, 0:num_features-1].values
 validation_class_data = validation_data.loc[:, num_features].values
+
+# apply outlier filtering to feature values
+feature_data, class_data = filter_outliers(feature_data, class_data)
+
+# scale feature data
+scaler = StandardScaler().fit(feature_data)
+feature_data = scaler.transform(feature_data)
+validation_feature_data = scaler.transform(validation_feature_data)
 
 kf = KFold(n_splits=10)
 

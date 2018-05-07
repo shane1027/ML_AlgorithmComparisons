@@ -42,19 +42,34 @@ print("Found %d outliers" % outlier_count)
 filtered_feature_data = feature_data[outlier_map, ]
 filtered_class_data = class_data[outlier_map, ]
 
+# return anomaly score on input data
+anomaly_score = outlier_filter.decision_function(feature_data)
+filtered_anomaly_score = outlier_filter.decision_function(filtered_feature_data)
+
 # plot results
-plt.subplot(1,2,1)
+plt.subplot(2,2,1)
 plt.scatter(range(len(class_data)), class_data,
         color='black')
 plt.xlabel('Individual Feature Vectors')
 plt.ylabel('Prediction Output')
-plt.subplot(1,2,2)
+plt.subplot(2,2,2)
 plt.scatter(range(len(filtered_class_data)), filtered_class_data,
         color='blue')
-plt.suptitle("Outlier Detection - Before and After\nOutliers Found: %d"
-        % outlier_count)
 plt.xlabel('Individual Feature Vectors')
 plt.ylabel('Prediction Output')
+plt.subplot(2,2,3)
+plt.scatter(range(len(anomaly_score)), anomaly_score,
+        color='black')
+plt.xlabel('Individual Feature Vectors')
+plt.ylabel('Anomaly Score')
+plt.axis([0, len(anomaly_score), -.2, .2])
+plt.subplot(2,2,4)
+plt.scatter(range(len(filtered_anomaly_score)), filtered_anomaly_score,
+        color='black')
+plt.xlabel('Individual Feature Vectors')
+plt.ylabel('Anomaly Score')
+plt.axis([0, len(filtered_anomaly_score), -.2, .2])
+plt.suptitle("Outlier Detection - Before and After")
 
 plt.show()
 

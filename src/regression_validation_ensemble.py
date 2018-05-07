@@ -51,8 +51,11 @@ class_data = model_data.loc[:, num_features].values
 validation_feature_data = validation_data.loc[:, 0:num_features-1].values
 validation_class_data = validation_data.loc[:, num_features].values
 
+# apply outlier filtering to feature values
+feature_data, class_data = filter_outliers(feature_data, class_data)
+
 # I found RobustScaler() to work best with this dataset
-scaler = RobustScaler().fit(feature_data)
+scaler = StandardScaler().fit(feature_data)
 feature_data = scaler.transform(feature_data)
 validation_feature_data = scaler.transform(validation_feature_data)
 
@@ -111,7 +114,7 @@ for train_indices, test_indices in kf.split(feature_data, class_data):
     title.set_y(0.95)
     plt.subplots_adjust(hspace=0.35)
     # uncomment the following line to see a scatter plot of each regression
-    plt.show()
+    # plt.show()
 
 bar_width = 1 / (2.5*(len(reg_name) + 1))
 opacity = 0.8

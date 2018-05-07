@@ -13,7 +13,7 @@
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
 from sklearn.metrics import r2_score
-from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import RobustScaler, StandardScaler
 import matplotlib.pyplot as plt
 import numpy as np
 from data_utils import *
@@ -23,10 +23,10 @@ REG_TRAIN_DATA='../data/regression_train.data'
 REG_TEST_DATA='../data/regression_test.test'
 
 # location to save prediction output
-PRED_OUT='../data/adaboost_prediction.txt'
+PRED_OUT='../data/adaboost_standard_filtered_prediction.txt'
 
 # regression algorithm
-regressor = AdaBoostRegressor(RandomForestRegressor())
+regressor = AdaBoostRegressor(RandomForestRegressor(n_jobs=-1))
 regressor_name = 'AdaBoost Random Forest Regressor'
 
 # build data frame of feature vals and target vals
@@ -41,7 +41,11 @@ class_data = model_data.loc[:, num_features].values
 validation_feature_data = validation_data.loc[:, 0:num_features-1].values
 validation_class_data = validation_data.loc[:, num_features].values
 
-scaler = RobustScaler.fit(feature_data)
+# apply outlier filtering to feature values
+feature_data, class_data = filter_outliers(feature_data, class_data)
+
+# scale feature data
+scaler = StandardScaler().fit(feature_data)
 feature_data = scaler.transform(feature_data)
 validation_feature_data = scaler.transform(validation_feature_data)
 

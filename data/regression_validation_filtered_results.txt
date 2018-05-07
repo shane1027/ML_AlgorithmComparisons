@@ -1,0 +1,81 @@
+Found 546 outliers
+Fold 1:
+Decision Tree Regressor has an R2 score of 0.963256
+Linear Regressor has an R2 score of 0.816328
+Ridge w/ cross-val has an R2 score of 0.816143
+Lasso w/ cross-val has an R2 score of 0.815886
+ElasticNet w/ cross-val has an R2 score of 0.801347
+Logistic Regression has an R2 score of 0.906718
+AdaBoost Random Forest has an R2 score of 0.983385
+Fold 2:
+Decision Tree Regressor has an R2 score of 0.893194
+Linear Regressor has an R2 score of 0.737757
+Ridge w/ cross-val has an R2 score of 0.738154
+Lasso w/ cross-val has an R2 score of 0.738954
+ElasticNet w/ cross-val has an R2 score of 0.743876
+Logistic Regression has an R2 score of 0.942891
+AdaBoost Random Forest has an R2 score of 0.975236
+Fold 3:
+Decision Tree Regressor has an R2 score of 0.948299
+Linear Regressor has an R2 score of 0.452152
+Ridge w/ cross-val has an R2 score of 0.454647
+Lasso w/ cross-val has an R2 score of 0.452452
+ElasticNet w/ cross-val has an R2 score of 0.470585
+Logistic Regression has an R2 score of 0.939407
+AdaBoost Random Forest has an R2 score of 0.981361
+Fold 4:
+Decision Tree Regressor has an R2 score of 0.953820
+Linear Regressor has an R2 score of 0.771299
+Ridge w/ cross-val has an R2 score of 0.770884
+Lasso w/ cross-val has an R2 score of 0.764978
+ElasticNet w/ cross-val has an R2 score of 0.746014
+Logistic Regression has an R2 score of 0.937610
+AdaBoost Random Forest has an R2 score of 0.977987
+Fold 5:
+Decision Tree Regressor has an R2 score of 0.870663
+Linear Regressor has an R2 score of 0.699528
+Ridge w/ cross-val has an R2 score of 0.699700
+Lasso w/ cross-val has an R2 score of 0.702093
+ElasticNet w/ cross-val has an R2 score of 0.686950
+Logistic Regression has an R2 score of 0.839364
+AdaBoost Random Forest has an R2 score of 0.941941
+Fold 6:
+Decision Tree Regressor has an R2 score of 0.954135
+Linear Regressor has an R2 score of 0.778698
+Ridge w/ cross-val has an R2 score of 0.778238
+Lasso w/ cross-val has an R2 score of 0.778189
+ElasticNet w/ cross-val has an R2 score of 0.754439
+Logistic Regression has an R2 score of 0.940554
+AdaBoost Random Forest has an R2 score of 0.982014
+Fold 7:
+Decision Tree Regressor has an R2 score of 0.927558
+Linear Regressor has an R2 score of 0.816319
+Ridge w/ cross-val has an R2 score of 0.816598
+Lasso w/ cross-val has an R2 score of 0.817652
+ElasticNet w/ cross-val has an R2 score of 0.814350
+Logistic Regression has an R2 score of 0.908638
+AdaBoost Random Forest has an R2 score of 0.969388
+Fold 8:
+Decision Tree Regressor has an R2 score of 0.938386
+Linear Regressor has an R2 score of 0.732265
+Ridge w/ cross-val has an R2 score of 0.731793
+Lasso w/ cross-val has an R2 score of 0.730325
+ElasticNet w/ cross-val has an R2 score of 0.706898
+Logistic Regression has an R2 score of 0.923940
+AdaBoost Random Forest has an R2 score of 0.975321
+Fold 9:
+Decision Tree Regressor has an R2 score of 0.964671
+Linear Regressor has an R2 score of 0.801995
+Ridge w/ cross-val has an R2 score of 0.801908
+Lasso w/ cross-val has an R2 score of 0.792720
+ElasticNet w/ cross-val has an R2 score of 0.784678
+Logistic Regression has an R2 score of 0.949001
+AdaBoost Random Forest has an R2 score of 0.984692
+Fold 10:
+Decision Tree Regressor has an R2 score of 0.933192
+Linear Regressor has an R2 score of 0.827905
+Ridge w/ cross-val has an R2 score of 0.828087
+Lasso w/ cross-val has an R2 score of 0.829953
+ElasticNet w/ cross-val has an R2 score of 0.816608
+Logistic Regression has an R2 score of 0.910287
+AdaBoost Random Forest has an R2 score of 0.972653
