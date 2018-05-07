@@ -1,0 +1,8 @@
+Fold 1:
+Decision Tree has an R2 score of 0.967489
+AdaBoost Random Forest has an R2 score of 0.985842
+Bagging has an R2 score of 0.982655
+Extra Trees has an R2 score of 0.979911
+Gradient Boosting has an R2 score of 0.985432
+Fold 2:
+Decision Tree has an R2 score of 0.964795

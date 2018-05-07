@@ -1,80 +1,90 @@
 Fold 1:
-Multi-Layer Perceptron has an R2 score of -922.734157
-Decision Tree Regressor has an R2 score of 0.969179
+Multi-Layer Perceptron has an R2 score of -186.534825
+Decision Tree Regressor has an R2 score of 0.967024
 Linear Regressor has an R2 score of 0.774263
 Ridge w/ cross-val has an R2 score of 0.771188
 Lasso w/ cross-val has an R2 score of 0.503645
 ElasticNet w/ cross-val has an R2 score of 0.503642
 Logistic Regression has an R2 score of 0.939757
+AdaBoost Random Forest has an R2 score of 0.985914
 Fold 2:
-Multi-Layer Perceptron has an R2 score of -1610.669181
-Decision Tree Regressor has an R2 score of 0.967947
+Multi-Layer Perceptron has an R2 score of -564.110566
+Decision Tree Regressor has an R2 score of 0.968297
 Linear Regressor has an R2 score of 0.751041
 Ridge w/ cross-val has an R2 score of 0.742622
 Lasso w/ cross-val has an R2 score of 0.489616
 ElasticNet w/ cross-val has an R2 score of 0.489613
 Logistic Regression has an R2 score of 0.914306
+AdaBoost Random Forest has an R2 score of 0.984442
 Fold 3:
-Multi-Layer Perceptron has an R2 score of -581.895796
-Decision Tree Regressor has an R2 score of 0.957694
+Multi-Layer Perceptron has an R2 score of -2019.885380
+Decision Tree Regressor has an R2 score of 0.960296
 Linear Regressor has an R2 score of 0.706093
 Ridge w/ cross-val has an R2 score of 0.706197
 Lasso w/ cross-val has an R2 score of 0.416184
 ElasticNet w/ cross-val has an R2 score of 0.416181
 Logistic Regression has an R2 score of 0.904928
+AdaBoost Random Forest has an R2 score of 0.981968
 Fold 4:
-Multi-Layer Perceptron has an R2 score of -512.195964
-Decision Tree Regressor has an R2 score of 0.955572
+Multi-Layer Perceptron has an R2 score of -610.873720
+Decision Tree Regressor has an R2 score of 0.957304
 Linear Regressor has an R2 score of 0.714362
 Ridge w/ cross-val has an R2 score of 0.170822
 Lasso w/ cross-val has an R2 score of 0.477031
 ElasticNet w/ cross-val has an R2 score of 0.477028
 Logistic Regression has an R2 score of 0.909141
+AdaBoost Random Forest has an R2 score of 0.981444
 Fold 5:
-Multi-Layer Perceptron has an R2 score of -598.550607
-Decision Tree Regressor has an R2 score of 0.953545
+Multi-Layer Perceptron has an R2 score of -352.697630
+Decision Tree Regressor has an R2 score of 0.952864
 Linear Regressor has an R2 score of 0.662374
 Ridge w/ cross-val has an R2 score of 0.624859
 Lasso w/ cross-val has an R2 score of 0.423482
 ElasticNet w/ cross-val has an R2 score of 0.423479
 Logistic Regression has an R2 score of 0.895629
+AdaBoost Random Forest has an R2 score of 0.976683
 Fold 6:
-Multi-Layer Perceptron has an R2 score of -697.650014
-Decision Tree Regressor has an R2 score of 0.914778
+Multi-Layer Perceptron has an R2 score of -212.557233
+Decision Tree Regressor has an R2 score of 0.916039
 Linear Regressor has an R2 score of 0.663121
 Ridge w/ cross-val has an R2 score of 0.664521
 Lasso w/ cross-val has an R2 score of 0.444715
 ElasticNet w/ cross-val has an R2 score of 0.444713
 Logistic Regression has an R2 score of 0.915092
+AdaBoost Random Forest has an R2 score of 0.974075
 Fold 7:
-Multi-Layer Perceptron has an R2 score of -5531.779687
-Decision Tree Regressor has an R2 score of 0.966703
+Multi-Layer Perceptron has an R2 score of -2272.722781
+Decision Tree Regressor has an R2 score of 0.963003
 Linear Regressor has an R2 score of 0.803054
 Ridge w/ cross-val has an R2 score of 0.801357
 Lasso w/ cross-val has an R2 score of 0.516867
 ElasticNet w/ cross-val has an R2 score of 0.516864
 Logistic Regression has an R2 score of 0.917178
+AdaBoost Random Forest has an R2 score of 0.984547
 Fold 8:
-Multi-Layer Perceptron has an R2 score of -652.382142
-Decision Tree Regressor has an R2 score of 0.973113
+Multi-Layer Perceptron has an R2 score of -494.543845
+Decision Tree Regressor has an R2 score of 0.970338
 Linear Regressor has an R2 score of 0.602898
 Ridge w/ cross-val has an R2 score of 0.582136
 Lasso w/ cross-val has an R2 score of 0.564066
 ElasticNet w/ cross-val has an R2 score of 0.564063
 Logistic Regression has an R2 score of 0.939875
+AdaBoost Random Forest has an R2 score of 0.987428
 Fold 9:
-Multi-Layer Perceptron has an R2 score of -133.418391
-Decision Tree Regressor has an R2 score of 0.964982
+Multi-Layer Perceptron has an R2 score of -796.189374
+Decision Tree Regressor has an R2 score of 0.966186
 Linear Regressor has an R2 score of 0.738185
 Ridge w/ cross-val has an R2 score of 0.427550
 Lasso w/ cross-val has an R2 score of 0.497209
 ElasticNet w/ cross-val has an R2 score of 0.497207
 Logistic Regression has an R2 score of 0.917840
+AdaBoost Random Forest has an R2 score of 0.985654
 Fold 10:
-Multi-Layer Perceptron has an R2 score of -916.783650
-Decision Tree Regressor has an R2 score of 0.954794
+Multi-Layer Perceptron has an R2 score of -1330.416883
+Decision Tree Regressor has an R2 score of 0.952131
 Linear Regressor has an R2 score of 0.761516
 Ridge w/ cross-val has an R2 score of 0.754370
 Lasso w/ cross-val has an R2 score of 0.487630
 ElasticNet w/ cross-val has an R2 score of 0.487627
 Logistic Regression has an R2 score of 0.907080
+AdaBoost Random Forest has an R2 score of 0.980269

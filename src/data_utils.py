@@ -9,6 +9,10 @@
 import numpy as np
 import pandas as pd
 
+## after the following functions were timed, pandas was deemed most efficient.
+##TODO: move DataFrame slicing into this set of utils in order to return
+# feature vectors and class vectors automatically... and scaling functions.
+
 # import data of type int, using numpy
 def import_int_data(file):
     data = np.genfromtxt(file, delimiter=',', dtype=int)
