@@ -8,6 +8,7 @@
 
 import numpy as np
 import pandas as pd
+from sklearn.ensemble import IsolationForest
 
 ## after the following functions were timed, pandas was deemed most efficient.
 ##TODO: move DataFrame slicing into this set of utils in order to return
@@ -27,4 +28,22 @@ def import_mixed_data(file):
 def import_pandas_data(file):
     df = pd.read_csv(file, sep=',', header=None)
     return df
+
+# filter outliers out of data using isolated forest technique
+def filter_outliers(x_input, y_input):
+    rng = np.random.RandomState(42)
+    outlier_filter = IsolationForest(random_state=rng)
+    outlier_filter.fit(x_input)
+
+    outlier_prediction = outlier_filter.predict(x_input)
+    outlier_map = list(map(lambda x: x == 1, outlier_prediction))
+    outlier_count = 0
+    for x in outlier_map:
+        if not x:
+            outlier_count += 1
+
+    print("Found %d outliers" % outlier_count)
+
+    return x_input[outlier_map, ], y_input[outlier_map, ]
+
 
